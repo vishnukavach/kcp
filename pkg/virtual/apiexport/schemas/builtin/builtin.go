@@ -266,4 +266,14 @@ var BuiltInAPIs = []internalapis.InternalAPI{
 		ResourceScope: apiextensionsv1.ClusterScoped,
 		HasStatus:     true,
 	},
+	{
+		Names: apiextensionsv1.CustomResourceDefinitionNames{
+			Plural:   "limitranges",
+			Singular: "limitrange",
+			Kind:     "LimitRange",
+		},
+		GroupVersion:  schema.GroupVersion{Group: "", Version: "v1"},
+		Instance:      &corev1.LimitRange{},
+		ResourceScope: apiextensionsv1.NamespaceScoped,
+	},
 }

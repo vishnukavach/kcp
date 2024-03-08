@@ -114,6 +114,16 @@ var BuiltInAPIs = []internalapis.InternalAPI{
 	},
 	{
 		Names: apiextensionsv1.CustomResourceDefinitionNames{
+			Plural:   "limitranges",
+			Singular: "limitrange",
+			Kind:     "LimitRange",
+		},
+		GroupVersion:  schema.GroupVersion{Group: "", Version: "v1"},
+		Instance:      &corev1.LimitRange{},
+		ResourceScope: apiextensionsv1.NamespaceScoped,
+	},
+	{
+		Names: apiextensionsv1.CustomResourceDefinitionNames{
 			Plural:   "resourcequotas",
 			Singular: "resourcequota",
 			Kind:     "ResourceQuota",
@@ -265,15 +275,5 @@ var BuiltInAPIs = []internalapis.InternalAPI{
 		Instance:      &apiextensionsv1.CustomResourceDefinition{},
 		ResourceScope: apiextensionsv1.ClusterScoped,
 		HasStatus:     true,
-	},
-	{
-		Names: apiextensionsv1.CustomResourceDefinitionNames{
-			Plural:   "limitranges",
-			Singular: "limitrange",
-			Kind:     "LimitRange",
-		},
-		GroupVersion:  schema.GroupVersion{Group: "", Version: "v1"},
-		Instance:      &corev1.LimitRange{},
-		ResourceScope: apiextensionsv1.NamespaceScoped,
 	},
 }
